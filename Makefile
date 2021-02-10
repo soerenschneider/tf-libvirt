@@ -1,18 +1,14 @@
-fmt:
-	terraform fmt
-	terraform fmt domain-cloudinit
-
 init:
 	terraform init
 
-plan: init
-	terraform plan
+plan-nuc:
+	terraform workspace select nuc && terraform plan -var-file nuc-dd.tfvars
 
-apply: init
-	terraform apply
+apply-nuc: init
+	terraform workspace select nuc && terraform apply -var-file nuc-dd.tfvars
 
-destroy:
-	terraform destroy
+destroy-nuc:
+	terraform workspace select nuc && terraform destroy -var-file nuc-dd.tfvars
 
 output: init
 	terraform output

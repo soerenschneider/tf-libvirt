@@ -8,13 +8,13 @@ variable "provider_uri" {
   description = "uri to the provider endpoint"
 }
 
-variable "domain_vcpus" {
+variable "vcpus" {
   description = "VCPUs to attach to the domain"
   type        = number
   default     = 2
 }
 
-variable "domain_memory_m" {
+variable "memory_m" {
   description = "Memory in megabytes for the domain"
   type        = number
 }
@@ -30,29 +30,32 @@ variable "domain_name" {
   type        = string
 }
 
+variable "domain_source_url" {
+  description = "URL source of the domain"
+  type        = string
+}
+
 variable "domain_autostart" {
   description = "Autostart the domain?"
   type        = bool
   default     = true
 }
 
-variable "domain_network" {
+variable "running" {
+  description = "Defines whether the instance is running or not"
+  type        = bool
+  default     = true
+}
+
+variable "network_name" {
   description = "Name of the network to attach the domain to"
   type        = string
-  default     = "host-bridge"
 }
 
 variable "domain_mac" {
   description = "MAC address of the network the domain is attached to"
   type        = string
   default     = ""
-}
-
-variable "image_uri" {
-  description = "Cloudinit image uri"
-  type        = string
-  #default = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-disk-kvm.img"
-  default = "http://mirror.scaleuptech.com/ubuntu-cloud-images/focal/current/focal-server-cloudimg-amd64-disk-kvm.img"
 }
 
 variable "cloudinit_user_data" {
@@ -68,4 +71,9 @@ variable "cloudinit_user_network" {
 variable "ssh_public_key" {
   description = "SSH public key to install in the domain"
   type        = string
+}
+
+variable "additional_disks" {
+  type    = list(string)
+  default = []
 }
