@@ -73,7 +73,7 @@ variable "ssh_public_key" {
   type        = string
 }
 
-variable "additional_disks" {
+variable "block_devices" {
   type    = list(string)
   default = []
 }

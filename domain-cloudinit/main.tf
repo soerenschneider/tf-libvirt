@@ -16,8 +16,8 @@ resource "libvirt_cloudinit_disk" "init" {
   pool           = var.pool_name
 }
 
-resource "libvirt_volume" "debian" {
-  name   = "debian"
+resource "libvirt_volume" "os" {
+  name   = "${var.domain_name}-os"
   pool   = var.pool_name
   source = var.domain_source_url
   format = "qcow2"
@@ -31,17 +31,26 @@ resource "libvirt_domain" "domain" {
     mode = "host-passthrough"
   }
 
-  autostart = var.domain_autostart
-  running   = var.running
-  cloudinit = libvirt_cloudinit_disk.init.id
+  autostart  = var.domain_autostart
+  running    = var.running
+  cloudinit  = libvirt_cloudinit_disk.init.id
+  qemu_agent = true
 
   network_interface {
     network_name = var.network_name
     mac          = var.domain_mac
   }
 
+  # TODO: Wait for fix on https://github.com/dmacvicar/terraform-provider-libvirt/issues/728
   disk {
-    volume_id = libvirt_volume.debian.id
+    volume_id = libvirt_volume.os.id
+  }
+
+  dynamic "disk" {
+    for_each = var.block_devices
+    content {
+      block_device = disk.value
+    }
   }
 
   console {

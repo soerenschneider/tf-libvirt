@@ -1,6 +1,15 @@
 init:
 	terraform init
 
+plan-vserver-dd:
+	terraform workspace select vserver-dd && terraform plan -var-file vserver-dd.tfvars
+
+apply-vserver-dd: init
+	terraform workspace select vserver-dd && terraform apply -auto-approve -var-file vserver-dd.tfvars
+
+destroy-vserver-dd:
+	terraform workspace select vserver-dd && terraform destroy -var-file vserver-dd.tfvars
+
 plan-nuc:
 	terraform workspace select nuc && terraform plan -var-file nuc-dd.tfvars
 

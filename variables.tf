@@ -15,10 +15,11 @@ variable "iso_urls" {
 
 variable "domains" {
   type = map(object({
-    memory  = number
-    vcpus   = number
-    mac     = string
-    os      = string
-    running = bool
+    memory        = number
+    vcpus         = number
+    mac           = string
+    os            = string
+    running       = bool
+    block_devices = list(string)
   }))
 }
