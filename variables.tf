@@ -19,6 +19,7 @@ variable "domains" {
     vcpus         = number
     mac           = string
     os            = string
+    disk_size_b   = number
     running       = bool
     block_devices = list(string)
   }))

@@ -21,6 +21,7 @@ module "domains" {
   running       = each.value.running
   block_devices = each.value.block_devices
   domain_mac    = each.value.mac
+  disk_size_bytes = each.value.disk_size_b
 
   domain_source_url = var.iso_urls[each.value.os]
   provider_uri      = var.provider_uri
