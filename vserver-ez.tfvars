@@ -9,4 +9,12 @@ domains = {
     os            = "debian"
     block_devices = ["/dev/disk/by-uuid/e61176dc-7357-4119-bfe2-5345ed746208"]
   }
+  sauron = {
+    memory        = 1536
+    vcpus         = 1
+    running       = true
+    mac           = "70:85:C2:FF:A6:88"
+    os            = "debian"
+    block_devices = []
+  }
 }
