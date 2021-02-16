@@ -30,8 +30,8 @@ variable "domain_name" {
   type        = string
 }
 
-variable "domain_source_url" {
-  description = "URL source of the domain"
+variable "base_image_id" {
+  description = "base image id"
   type        = string
 }
 

@@ -3,6 +3,7 @@ data "template_file" "user_data" {
   vars = {
     ssh_public_key_1 = var.ssh_public_keys[0]
     ssh_public_key_2 = var.ssh_public_keys[1]
+    ssh_public_key_3 = var.ssh_public_keys[2]
   }
 }
 
@@ -17,18 +18,11 @@ resource "libvirt_cloudinit_disk" "init" {
   pool           = var.pool_name
 }
 
-resource "libvirt_volume" "debian" {
-  name   = "opensuse_leap"
-  source = "https://cloud.debian.org/images/cloud/buster/20210201-535/debian-10-genericcloud-amd64-20210201-535.qcow2"
-  format = "qcow2"
-  pool   = var.pool_name
-}
-
 resource "libvirt_volume" "os" {
   name           = "${var.domain_name}-os"
   pool           = var.pool_name
   size           = var.disk_size_bytes
-  base_volume_id = libvirt_volume.debian.id
+  base_volume_id = var.base_image_id
 }
 
 resource "libvirt_domain" "domain" {

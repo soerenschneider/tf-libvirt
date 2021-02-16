@@ -11,6 +11,14 @@ resource "libvirt_network" "bridge" {
   autostart = true
 }
 
+resource "libvirt_volume" "base" {
+  for_each = var.iso_urls
+  name   = "base-${each.key}"
+  source = each.value
+  format = "qcow2"
+  pool   = libvirt_pool.default.name
+}
+
 module "domains" {
   for_each    = var.domains
   source      = "./domain-cloudinit"
@@ -19,11 +27,11 @@ module "domains" {
   memory_m      = each.value.memory
   vcpus         = each.value.vcpus
   running       = each.value.running
+  base_image_id = libvirt_volume.base[each.value.os].id
   block_devices = each.value.block_devices
   domain_mac    = each.value.mac
   disk_size_bytes = each.value.disk_size_b
 
-  domain_source_url = var.iso_urls[each.value.os]
   provider_uri      = var.provider_uri
   ssh_public_keys   = var.ssh_public_keys
 
