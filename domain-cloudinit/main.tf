@@ -1,7 +1,8 @@
 data "template_file" "user_data" {
   template = file(var.cloudinit_user_data)
   vars = {
-    ssh_public_key = var.ssh_public_key
+    ssh_public_key_1 = var.ssh_public_keys[0]
+    ssh_public_key_2 = var.ssh_public_keys[1]
   }
 }
 

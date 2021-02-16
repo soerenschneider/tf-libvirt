@@ -24,7 +24,7 @@ module "domains" {
 
   domain_source_url = var.iso_urls[each.value.os]
   provider_uri      = var.provider_uri
-  ssh_public_key    = var.ssh_public_key
+  ssh_public_keys   = var.ssh_public_keys
 
   pool_name    = libvirt_pool.default.name
   network_name = libvirt_network.bridge.name
