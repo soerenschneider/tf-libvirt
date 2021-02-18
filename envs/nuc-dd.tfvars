@@ -1,13 +1,13 @@
 provider_uri = "qemu+ssh://soeren@nuc.dd.soerenschneider.net/system"
 
 domains = {
-  k8 = {
-    memory        = 8192
-    vcpus         = 3
+  hass = {
+    memory        = 1024
+    vcpus         = 1
     running       = true
-    mac           = "6c:06:2d:e6:de:0c"
+    mac           = "ee:32:c1:64:32:80"
     os            = "debian"
-    disk_size_b   = 21474836480 # 20 g
+    disk_size_b   = 5368709120 # 10g
     block_devices = []
   }
 }
