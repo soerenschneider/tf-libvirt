@@ -60,12 +60,12 @@ variable "domain_mac" {
 
 variable "cloudinit_user_data" {
   description = "cloudinit user data file"
-  default     = "cloud_init.cfg"
+  default     = "templates/cloud_init.cfg"
 }
 
 variable "cloudinit_user_network" {
   description = "cloudinit network config file"
-  default     = "network_config.cfg"
+  default     = "templates/network_config.cfg"
 }
 
 variable "ssh_public_keys" {
