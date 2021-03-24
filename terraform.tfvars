@@ -6,4 +6,5 @@ ssh_public_keys = [
 
 iso_urls = {
   "debian" = "http://cloud.debian.org/images/cloud/buster/20210201-535/debian-10-genericcloud-amd64-20210201-535.qcow2"
+  "ubuntu2004" = "https://cloud-images.ubuntu.com/focal/20210304/focal-server-cloudimg-amd64.img"
 }

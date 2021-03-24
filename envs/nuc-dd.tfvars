@@ -6,7 +6,7 @@ domains = {
     vcpus         = 1
     running       = true
     mac           = "ee:32:c1:64:32:80"
-    os            = "debian"
+    os            = "ubuntu2004"
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
