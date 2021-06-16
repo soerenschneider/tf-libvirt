@@ -19,4 +19,13 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
+  acme = {
+    memory        = 512
+    vcpus         = 1
+    running       = true
+    mac           = "ee:32:c1:64:16:84"
+    os            = "debian"
+    disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
 }
