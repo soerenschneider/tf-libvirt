@@ -41,6 +41,7 @@ resource "libvirt_domain" "domain" {
   network_interface {
     network_name = var.network_name
     mac          = var.domain_mac
+    bridge       = "br0"
   }
 
   # TODO: Wait for fix on https://github.com/dmacvicar/terraform-provider-libvirt/issues/728
