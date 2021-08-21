@@ -10,6 +10,15 @@ apply-vserver-dd: init
 destroy-vserver-dd:
 	terraform workspace select vserver-dd && terraform destroy -var-file envs/vserver-dd.tfvars
 
+plan-vserver-pt:
+	terraform workspace select vserver-pt && terraform plan -var-file envs/vserver-pt.tfvars
+
+apply-vserver-pt: init
+	terraform workspace select vserver-pt && terraform apply -auto-approve -var-file envs/vserver-pt.tfvars
+
+destroy-vserver-pt:
+	terraform workspace select vserver-pt && terraform destroy -var-file envs/vserver-pt.tfvars
+
 plan-vserver-ez:
 	terraform workspace select vserver-ez && terraform plan -var-file envs/vserver-ez.tfvars
 
