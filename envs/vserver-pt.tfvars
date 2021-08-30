@@ -1,4 +1,4 @@
-provider_uri = "qemu+ssh://soeren@vserver.dd.soerenschneider.net/system"
+provider_uri = "qemu+ssh://soeren@vserver.pt.soerenschneider.net/system"
 
 domains = {
   fileserver = {
