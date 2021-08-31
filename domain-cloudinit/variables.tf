@@ -70,7 +70,7 @@ variable "cloudinit_user_network" {
 
 variable "ssh_public_keys" {
   description = "SSH public key to install in the domain"
-  type        = list(string)
+  type        = string
 }
 
 variable "block_devices" {

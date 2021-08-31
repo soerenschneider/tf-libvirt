@@ -5,7 +5,7 @@ variable "provider_uri" {
 
 variable "ssh_public_keys" {
   description = "ssh public key"
-  type        = list(string)
+  type        = string
 }
 
 variable "iso_urls" {
