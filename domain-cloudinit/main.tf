@@ -27,7 +27,7 @@ resource "libvirt_domain" "domain" {
   name   = var.domain_name
   memory = var.memory_m
   vcpu   = var.vcpus
-  cpu = {
+  cpu {
     mode = "host-passthrough"
   }
 
