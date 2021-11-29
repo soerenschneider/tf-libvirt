@@ -1,4 +1,5 @@
 init:
+	pre-commit install
 	terraform init
 
 plan-vserver-dd:
