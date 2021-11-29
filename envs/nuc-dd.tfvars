@@ -38,12 +38,12 @@ domains = {
     block_devices = []
   }
   pim = {
-    memory        = 256
+    memory        = 512
     vcpus         = 1
     running       = true
     mac           = "ee:32:cc:12:12:06"
     os            = "debian-11"
-    disk_size_b   = 5368709120 # 5g
+    disk_size_b   = 10737418240 # 10g
     block_devices = []
   }
   auth = {
@@ -51,6 +51,15 @@ domains = {
     vcpus         = 1
     running       = true
     mac           = "ee:32:cc:af:fe:88"
+    os            = "debian-11"
+    disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
+  mqtt = {
+    memory        = 512
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:cc:41:aa:96"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
     block_devices = []
