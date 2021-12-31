@@ -1,6 +1,19 @@
 provider_uri = "qemu+ssh://soeren@nuc.dd.soerenschneider.net/system"
 
+iso_urls = {
+  "debian-11" = "https://cdimage.debian.org/images/cloud/bullseye/20211011-792/debian-11-generic-amd64-20211011-792.qcow2"
+}
+
 domains = {
+  paperless = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:c7:86:81:00"
+    os            = "debian-11"
+    disk_size_b   = 10737418240 # 10g
+    block_devices = []
+  }
   minio = {
     memory        = 1024
     vcpus         = 1
@@ -15,6 +28,15 @@ domains = {
     vcpus         = 1
     running       = true
     mac           = "ee:32:c1:64:32:80"
+    os            = "debian-11"
+    disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
+  dyndns = {
+    memory        = 256
+    vcpus         = 1
+    running       = true
+    mac           = "ee:32:c8:23:02:11"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
     block_devices = []
@@ -62,6 +84,24 @@ domains = {
     mac           = "ee:32:cc:41:aa:96"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
+  postgres = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:cc:98:b4:21"
+    os            = "debian-11"
+    disk_size_b   = 21474836480 # 20g
+    block_devices = []
+  }
+  k8s-master = {
+    memory        = 8192
+    vcpus         = 4
+    running       = false
+    mac           = "ee:32:cc:17:e2:92"
+    os            = "debian-11"
+    disk_size_b   = 21474836480 # 20g
     block_devices = []
   }
 }

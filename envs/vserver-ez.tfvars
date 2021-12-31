@@ -6,8 +6,8 @@ domains = {
     vcpus         = 2
     running       = true
     mac           = "70:85:C2:DD:37:25"
-    os            = "debian"
-    disk_size_b   = 21474836480 # 20 g
+    os            = "debian-11"
+    disk_size_b   = 30678339291 # 30 g
     block_devices = ["/dev/disk/by-uuid/e61176dc-7357-4119-bfe2-5345ed746208"]
   }
   sauron = {
@@ -15,7 +15,7 @@ domains = {
     vcpus         = 1
     running       = true
     mac           = "70:85:C2:FF:A6:88"
-    os            = "debian"
+    os            = "debian-11"
     disk_size_b   = 21474836480 # 20 g
     block_devices = []
   }

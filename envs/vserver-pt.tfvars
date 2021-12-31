@@ -7,7 +7,7 @@ domains = {
     running       = true
     mac           = "ee:32:bc:ff:89:12"
     os            = "debian-11"
-    disk_size_b   = 7158279168 # 7g
+    disk_size_b   = 30678339291 # 30g
     block_devices = ["/dev/disk/by-uuid/7eac2dd2-8857-4081-a0bd-3c883682cdd2"]
   }
   sauron = {
