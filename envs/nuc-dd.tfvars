@@ -95,13 +95,13 @@ domains = {
     disk_size_b   = 21474836480 # 20g
     block_devices = []
   }
-  k8s-master = {
-    memory        = 8192
-    vcpus         = 4
-    running       = false
-    mac           = "ee:32:cc:17:e2:92"
+  notifications = {
+    memory        = 384
+    vcpus         = 1
+    running       = true
+    mac           = "ee:32:cc:84:81:0f"
     os            = "debian-11"
-    disk_size_b   = 21474836480 # 20g
+    disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
 }
