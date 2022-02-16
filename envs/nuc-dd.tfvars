@@ -104,4 +104,13 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
+  garage = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:cc:84:86:0e"
+    os            = "debian-11"
+    disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
 }

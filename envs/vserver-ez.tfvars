@@ -19,4 +19,22 @@ domains = {
     disk_size_b   = 21474836480 # 20 g
     block_devices = []
   }
+  garage = {
+    memory        = 1024
+    vcpus         = 1
+    running       = true
+    mac           = "70:85:C2:FF:A6:01"
+    os            = "debian-11"
+    disk_size_b   = 5368709120 # 5 g
+    block_devices = []
+  }
+  minio = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "70:85:C2:FF:A6:02"
+    os            = "debian-11"
+    disk_size_b   = 30678339291 # 30 g
+    block_devices = []
+  }
 }

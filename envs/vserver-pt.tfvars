@@ -19,4 +19,13 @@ domains = {
     disk_size_b   = 10737418240 # 10g
     block_devices = []
   }
+  minio = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:bc:ff:89:14"
+    os            = "debian-11"
+    disk_size_b   = 30678339291 # 30g
+    block_devices = []
+  }
 }
