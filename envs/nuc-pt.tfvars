@@ -28,4 +28,13 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
+  loki = {
+    memory        = 1024
+    vcpus         = 2
+    running       = true
+    mac           = "ee:32:cc:72:32:ad"
+    os            = "debian-11"
+    disk_size_b   = 10737418240 # 10g
+    block_devices = []
+  }
 }
