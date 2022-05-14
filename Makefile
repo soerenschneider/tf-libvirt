@@ -38,6 +38,18 @@ apply-auto-vserver-ez: init
 destroy-vserver-ez:
 	terraform workspace select vserver-ez && terraform destroy -var-file envs/vserver-ez.tfvars
 
+plan-rack-ez:
+	terraform workspace select rack-ez && terraform plan -var-file envs/rack-ez.tfvars
+
+apply-rack-ez: init
+	terraform workspace select rack-ez && terraform apply -var-file envs/rack-ez.tfvars
+
+apply-auto-rack-ez: init
+	terraform workspace select rack-ez && terraform apply -auto-approve -var-file envs/rack-ez.tfvars
+
+destroy-rack-ez:
+	terraform workspace select rack-ez && terraform destroy -var-file envs/rack-ez.tfvars
+
 plan-nuc-dd:
 	terraform workspace select nuc-dd && terraform plan -var-file envs/nuc-dd.tfvars
 
