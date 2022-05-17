@@ -23,4 +23,13 @@ domains = {
     disk_size_b   = 21474836480 # 20 g
     block_devices = []
   }
+  dyndns = {
+    memory        = 512
+    vcpus         = 1
+    running       = true
+    mac           = "70:85:C2:FF:A6:89"
+    os            = "debian-11"
+    disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
 }
