@@ -19,8 +19,26 @@ resource "libvirt_volume" "base" {
   pool     = libvirt_pool.default.name
 }
 
+locals {
+  defined_hosts = flatten([for hosts_key, hosts_value in try(yamldecode(file(var.hosts_file)), {}) : [
+    for datacenter_key, datacenter_values in hosts_value : [
+      for host in datacenter_values : host if lookup(host, "physical", null) != null
+    ] if datacenter_key == var.datacenter
+    ] if hosts_key == "local_hosts"
+  ])
+
+  hosts_macs = {
+    for host in local.defined_hosts :
+    host.host => host.physical
+  }
+
+  domains = { for domain, val in var.domains :
+    domain => merge(val, { "mac" = lookup(val, "mac", null) != null ? val["mac"] : lookup(local.hosts_macs, domain, null) })
+  }
+}
+
 module "domains" {
-  for_each    = var.domains
+  for_each    = local.domains
   source      = "./domain-cloudinit"
   domain_name = each.key
 

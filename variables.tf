@@ -13,11 +13,21 @@ variable "iso_urls" {
   type        = map(string)
 }
 
+variable "datacenter" {
+  type    = string
+  default = ""
+}
+
+variable "hosts_file" {
+  type    = string
+  default = ""
+}
+
 variable "domains" {
   type = map(object({
     memory        = number
     vcpus         = number
-    mac           = string
+    mac           = optional(string)
     os            = string
     disk_size_b   = number
     running       = bool
