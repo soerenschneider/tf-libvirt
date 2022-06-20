@@ -2,7 +2,7 @@ provider_uri = "qemu+ssh://soeren@vserver.pt.soerenschneider.net/system"
 
 domains = {
   fileserver = {
-    memory        = 2048
+    memory        = 4096
     vcpus         = 2
     running       = true
     mac           = "ee:32:bc:ff:89:12"
