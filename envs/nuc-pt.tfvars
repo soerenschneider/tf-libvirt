@@ -1,22 +1,19 @@
 provider_uri = "qemu+ssh://soeren@nuc.pt.soerenschneider.net/system"
 
+iso_urls = {
+  "debian-11" = "https://cloud.debian.org/images/cloud/bullseye/20220503-998/debian-11-generic-amd64-20220503-998.qcow2"
+  "ubuntu-2204" = "https://cloud-images.ubuntu.com/jammy/20220616/jammy-server-cloudimg-amd64-disk-kvm.img"
+}
+
+datacenter = "pt"
+
 domains = {
   hass = {
     memory        = 1024
     vcpus         = 1
     running       = true
-    mac           = "ee:32:c1:72:32:aa"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
-    block_devices = []
-  }
-  garage = {
-    memory        = 1024
-    vcpus         = 1
-    running       = true
-    mac           = "ee:32:cc:72:32:ab"
-    os            = "debian-11"
-    disk_size_b   = 10737418240 # 10g
     block_devices = []
   }
   mqtt = {
@@ -28,13 +25,13 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  loki = {
+  hermit = {
     memory        = 1024
     vcpus         = 2
     running       = true
     mac           = "ee:32:cc:72:32:ad"
-    os            = "debian-11"
-    disk_size_b   = 10737418240 # 10g
+    os            = "ubuntu-2204"
+    disk_size_b   = 20737418240 # 10g
     block_devices = []
   }
   dyndns = {
