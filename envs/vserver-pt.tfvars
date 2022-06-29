@@ -1,5 +1,7 @@
 provider_uri = "qemu+ssh://soeren@vserver.pt.soerenschneider.net/system"
 
+datacenter = "pt"
+
 domains = {
   fileserver = {
     memory        = 4096

@@ -20,7 +20,6 @@ domains = {
     memory        = 256
     vcpus         = 1
     running       = true
-    mac           = "ee:32:cc:72:32:ac"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
     block_devices = []
@@ -29,7 +28,6 @@ domains = {
     memory        = 1024
     vcpus         = 2
     running       = true
-    mac           = "ee:32:cc:72:32:ad"
     os            = "ubuntu-2204"
     disk_size_b   = 20737418240 # 10g
     block_devices = []
@@ -38,9 +36,16 @@ domains = {
     memory        = 512
     vcpus         = 1
     running       = true
-    mac           = "ee:32:bc:ff:89:17"
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
+  k8s-master-3 = {
+    memory        = 2048
+    vcpus         = 3
+    running       = true
+    os            = "ubuntu-2204"
+    disk_size_b   = 20737418240 # 20g
     block_devices = []
   }
 }
