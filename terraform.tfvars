@@ -1,4 +1,4 @@
-ssh_public_keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHmMx+mCHm4vr4FXkfLbgXrWGEr+DNmMd4P5TqCz/9a"
+ssh_public_keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHmMx+mCHm4vr4FXkfLbgXrWGEr+DNmMd4P5TqCz/9a,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICrnd+/D1js9b6dduNMWCHKVmHSktwp8eD2fRAQnSRIR"
 
 hosts_file = "/home/soeren/src/gitlab/playbooks/hosts.yml"
 

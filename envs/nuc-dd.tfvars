@@ -72,4 +72,12 @@ domains = {
     disk_size_b   = 20226113536 # 10g
     block_devices = []
   }
+  rabbitmq = {
+    memory        = 2048
+    vcpus         = 2
+    running       = true
+    os            = "ubuntu-2204"
+    disk_size_b   = 10737418240 # 10g
+    block_devices = []
+  }
 }

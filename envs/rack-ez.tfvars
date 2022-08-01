@@ -40,4 +40,12 @@ domains = {
     disk_size_b   = 21474836480 # 20 g
     block_devices = []
   }
+  minio = {
+    memory        = 2048
+    vcpus         = 2
+    running       = true
+    os            = "ubuntu-2204"
+    disk_size_b   = 21474836480 # 20 g
+    block_devices = ["/dev/disk/by-uuid/a319288e-3a2e-494a-84ea-e69df466dda2"]
+  }
 }
