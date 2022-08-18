@@ -4,5 +4,5 @@ hosts_file = "/home/soeren/src/gitlab/playbooks/hosts.yml"
 
 iso_urls = {
   "debian-11" = "https://cdimage.debian.org/images/cloud/bullseye/20211220-862/debian-11-generic-amd64-20211220-862.qcow2"
-  "ubuntu-2204" = "https://cloud-images.ubuntu.com/jammy/20220616/jammy-server-cloudimg-amd64-disk-kvm.img"
+  "ubuntu-2204" = "https://cloud-images.ubuntu.com/releases/22.04/release-20220810/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img"
 }
