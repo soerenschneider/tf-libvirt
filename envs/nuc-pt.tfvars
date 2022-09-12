@@ -40,12 +40,12 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  k8s-master-3 = {
-    memory        = 2048
+  k8s-node-3 = {
+    memory        = 8192
     vcpus         = 3
     running       = true
-    os            = "ubuntu-2204"
-    disk_size_b   = 20737418240 # 20g
+    os            = "debian-11"
+    disk_size_b   = 51130567680 # 50g
     block_devices = []
   }
 }

@@ -36,16 +36,24 @@ domains = {
     memory        = 2048
     vcpus         = 3
     running       = true
-    os            = "ubuntu-2204"
-    disk_size_b   = 21474836480 # 20 g
+    os            = "debian-11"
+    disk_size_b   = 30678339584 # 30 g
     block_devices = []
   }
-  minio-1 = {
+  minio-2 = {
     memory        = 2048
     vcpus         = 2
     running       = true
     os            = "ubuntu-2204"
     disk_size_b   = 21474836480 # 20 g
     block_devices = ["/dev/disk/by-uuid/a319288e-3a2e-494a-84ea-e69df466dda2"]
+  }
+  k8s-node-2 = {
+    memory        = 16384
+    vcpus         = 8
+    running       = true
+    os            = "debian-11"
+    disk_size_b   = 107374182400 # 100g
+    block_devices = []
   }
 }

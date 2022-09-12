@@ -8,14 +8,6 @@ iso_urls = {
 datacenter = "dd"
 
 domains = {
-  paperless = {
-    memory        = 1024
-    vcpus         = 2
-    running       = true
-    os            = "debian-11"
-    disk_size_b   = 10737418240 # 10g
-    block_devices = []
-  }
   hass = {
     memory        = 1024
     vcpus         = 2
@@ -40,14 +32,6 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  sauron = {
-    memory        = 1024
-    vcpus         = 2
-    running       = true
-    os            = "debian-11"
-    disk_size_b   = 10737418240 # 10g
-    block_devices = []
-  }
   pim = {
     memory        = 512
     vcpus         = 1
@@ -64,20 +48,28 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  k8s-master-1 = {
-    memory        = 2048
-    vcpus         = 3
+  k8s-node-1 = {
+    memory        = 20480
+    vcpus         = 7
     running       = true
-    os            = "ubuntu-2204"
-    disk_size_b   = 20226113536 # 10g
+    os            = "debian-11"
+    disk_size_b   = 107374182400 # 100g
     block_devices = []
   }
-  rabbitmq = {
-    memory        = 2048
-    vcpus         = 2
+  docker = {
+    memory        = 4096
+    vcpus         = 4
     running       = true
     os            = "ubuntu-2204"
-    disk_size_b   = 10737418240 # 10g
+    disk_size_b   = 53687091200 # 50g
     block_devices = []
+  }
+  minio-4 = {
+    memory        = 3072
+    vcpus         = 3
+    running       = true
+    os            = "debian-11"
+    disk_size_b   = 30678339584 # 30g
+    block_devices = ["/dev/disk/by-uuid/2f1b6a68-a753-4e41-84c9-62a52ecc39c0"]
   }
 }
