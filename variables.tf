@@ -30,7 +30,7 @@ variable "domains" {
     mac           = optional(string)
     os            = string
     disk_size_b   = number
-    running       = bool
-    block_devices = list(string)
+    running       = optional(bool, true)
+    block_devices = optional(list(string), [])
   }))
 }
