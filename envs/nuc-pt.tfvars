@@ -25,12 +25,12 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  k8s-node-pt-1 = {
+  k8s-prd-node-pt-1 = {
     memory        = 12288
     vcpus         = 3
     running       = true
     os            = "ubuntu-2204-full"
-    disk_size_b   = 134217728000 # 125g
+    disk_size_b   = 187904819200 # 175g
     block_devices = []
   }
 }

@@ -30,10 +30,13 @@ domains = {
     vcpus         = 2
     running       = true
     os            = "ubuntu-2204"
-    disk_size_b   = 76695851520 # 75g
-    block_devices = ["/dev/disk/by-uuid/ecaa03b1-f0e4-45da-b71d-1e983a0d66b8"]
+    disk_size_b   = 76695852032 # 75g
+    block_devices = [
+     "/dev/disk/by-uuid/f7d253e2-ef36-4b59-a1a4-f40cd7108734",
+     "/dev/disk/by-uuid/547b4963-91f7-4c73-91ea-2111c03625d0"
+    ]
   }
-  k8s-master-3 = {
+  k8s-prd-master-3 = {
     memory        = 3096
     vcpus         = 2
     running       = true

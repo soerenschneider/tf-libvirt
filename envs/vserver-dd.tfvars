@@ -23,22 +23,27 @@ domains = {
     running       = true
     os            = "ubuntu-2204"
     disk_size_b   = 76695852032 # 75g
-    block_devices = ["/dev/disk/by-uuid/dbe7c3dd-1552-4f37-b6a3-953bfc22635d"]
+    block_devices = [
+      "/dev/disk/by-uuid/b87d58f7-38b0-4d05-974f-a84f8f338c2a",
+      "/dev/disk/by-uuid/e1f60110-8fcb-4745-b7d5-39e310b335be"
+    ]
   }
-  k8s-master-1 = {
+  k8s-prd-master-1 = {
     memory        = 3072
     vcpus         = 3
     running       = true
-    os            = "debian-11"
-    disk_size_b   = 53687091200 # 50g
+    os            = "ubuntu-2204-full"
+#    disk_size_b   = 53687091200 # 50g
+    disk_size_b   = 32212254720 # 50g
     block_devices = []
   }
-  k8s-node-dd-2 = {
+  k8s-prd-node-dd-2 = {
     memory        = 13312
     vcpus         = 3
     running       = true
     os            = "ubuntu-2204-full"
-    disk_size_b   = 134217728000 # 125g
+    disk_size_b   = 32212254720 # 175g 
+#    disk_size_b   = 187904819200 # 175g 
     block_devices = []
   }
   sauron = {

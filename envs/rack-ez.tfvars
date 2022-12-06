@@ -33,7 +33,7 @@ domains = {
     disk_size_b   = 5368709120 # 5g
     block_devices = []
   }
-  k8s-master-2 = {
+  k8s-prd-master-2 = {
     memory        = 3072
     vcpus         = 3
     running       = true
@@ -41,12 +41,12 @@ domains = {
     disk_size_b   = 53687091200 # 50 g
     block_devices = []
   }
-  k8s-node-ez-1 = {
+  k8s-prd-node-ez-1 = {
     memory        = 17408
     vcpus         = 8
     running       = true
     os            = "ubuntu-2204-full"
-    disk_size_b   = 134217728000 # 125g
+    disk_size_b   = 187904819200 # 175g
     block_devices = []
   }
   dbs = {
@@ -54,7 +54,10 @@ domains = {
     vcpus         = 4
     running       = true
     os            = "ubuntu-2204"
-    disk_size_b   = 76695851520 # 75g
-    block_devices = ["/dev/disk/by-uuid/a319288e-3a2e-494a-84ea-e69df466dda2"]
+    disk_size_b   = 76695852032 # 75g
+    block_devices = [
+      "/dev/disk/by-uuid/272a9ea3-a198-4bd3-b6c7-9d4fa0900eee",
+      "/dev/disk/by-uuid/55a34845-f06f-4a8f-b992-d0db0c75a7d8"
+    ]
   }
 }
