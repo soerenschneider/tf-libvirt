@@ -1,4 +1,4 @@
-provider_uri = "qemu+ssh://soeren@rack.ez.soerenschneider.net/system"
+provider_uri = "qemu+ssh://soeren@rack.ez.soeren.cloud/system"
 
 iso_urls = {
   "debian-11" = "https://cdimage.debian.org/images/cloud/bullseye/20220328-962/debian-11-generic-amd64-20220328-962.qcow2"
@@ -26,11 +26,19 @@ domains = {
     block_devices = []
   }
   dyndns = {
-    memory        = 512
+    memory        = 256
     vcpus         = 1
     running       = true
     os            = "debian-11"
     disk_size_b   = 5368709120 # 5g
+    block_devices = []
+  }
+  k8s-prd-lb = {
+    memory        = 256
+    vcpus         = 1
+    running       = true
+    os            = "ubuntu-2204-full"
+    disk_size_b   = 21474836480 # 20 g
     block_devices = []
   }
   k8s-prd-master-2 = {
@@ -47,6 +55,14 @@ domains = {
     running       = true
     os            = "ubuntu-2204-full"
     disk_size_b   = 187904819200 # 175g
+    block_devices = []
+  }
+  pool = {
+    memory        = 2048
+    vcpus         = 4
+    running       = true
+    os            = "ubuntu-2204-full"
+    disk_size_b   = 76695852032 # 75g
     block_devices = []
   }
   dbs = {

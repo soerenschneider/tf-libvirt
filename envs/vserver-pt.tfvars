@@ -1,4 +1,4 @@
-provider_uri = "qemu+ssh://soeren@vserver.pt.soerenschneider.net/system"
+provider_uri = "qemu+ssh://soeren@vserver.pt.soeren.cloud/system"
 
 iso_urls = {
   "debian-11" = "https://cdimage.debian.org/cdimage/cloud/bullseye/20220816-1109/debian-11-generic-amd64-20220816-1109.qcow2"
@@ -41,7 +41,16 @@ domains = {
     vcpus         = 2
     running       = true
     os            = "ubuntu-2204-full"
-    disk_size_b   = 53687091200 # 50g
+    disk_size_b   = 187904819200 # 50g
+    #disk_size_b   = 53687091200 # 50g
+    block_devices = []
+  }
+  k8s-prd-node-pt-2 = {
+    memory        = 13312
+    vcpus         = 3
+    running       = true
+    os            = "ubuntu-2204-full"
+    disk_size_b   = 187904819200 # 175g
     block_devices = []
   }
 }

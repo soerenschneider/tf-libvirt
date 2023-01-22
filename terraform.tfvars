@@ -1,4 +1,4 @@
-ssh_public_keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHmMx+mCHm4vr4FXkfLbgXrWGEr+DNmMd4P5TqCz/9a,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICrnd+/D1js9b6dduNMWCHKVmHSktwp8eD2fRAQnSRIR"
+ssh_public_keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHmMx+mCHm4vr4FXkfLbgXrWGEr+DNmMd4P5TqCz/9a,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICrnd+/D1js9b6dduNMWCHKVmHSktwp8eD2fRAQnSRIR,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJVcwg19yWQvSV1yhj078hq4EQL/BU+k2UshvRyMBSkh soeren@yoga"
 
 hosts_file = "/home/soeren/src/gitlab/playbooks/inventory/prod/group_vars/all/hosts.yml"
 
