@@ -14,6 +14,15 @@ apply-auto-vserver-dd: init
 destroy-vserver-dd:
 	test "$(terraform workspace show)" != "vserver-dd" && terraform workspace select vserver-dd; terraform destroy -var-file envs/vserver-dd.tfvars
 
+apply-nuc-pt:
+	test "$(terraform workspace show)" != "nuc-pt" && terraform workspace select nuc-pt; terraform apply -var-file envs/nuc-pt.tfvars
+
+plan-nuc-pt:
+	test "$(terraform workspace show)" != "nuc-pt" && terraform workspace select nuc-pt; terraform plan -var-file envs/nuc-pt.tfvars
+
+destroy-nuc-pt:
+	test "$(terraform workspace show)" != "nuc-pt" && terraform workspace select nuc-pt; terraform destroy -var-file envs/nuc-pt.tfvars
+
 plan-vserver-pt:
 	test "$(terraform workspace show)" != "vserver-pt" && terraform workspace select vserver-pt; terraform plan -var-file envs/vserver-pt.tfvars
 
@@ -50,8 +59,14 @@ apply-auto-rack-ez: init
 destroy-rack-ez:
 	test "$(terraform workspace show)" != "rack-ez" && terraform workspace select rack-ez; terraform destroy -var-file envs/rack-ez.tfvars
 
+apply-nuc-dd:
+	test "$(terraform workspace show)" != "nuc-dd" && terraform workspace select nuc-dd; terraform apply -var-file envs/nuc-dd.tfvars
+
 plan-nuc-dd:
 	test "$(terraform workspace show)" != "nuc-dd" && terraform workspace select nuc-dd; terraform plan -var-file envs/nuc-dd.tfvars
+
+destroy-nuc-dd:
+	test "$(terraform workspace show)" != "nuc-dd" && terraform workspace select nuc-dd; terraform destroy -var-file envs/nuc-dd.tfvars
 
 output: init
 	terraform output
