@@ -19,6 +19,11 @@ variable "memory_m" {
   type        = number
 }
 
+variable "create_volume" {
+  type        = bool
+  description = "LVM support is horrible. This bool specifies whether to create a volume automatically"
+}
+
 variable "disk_size_bytes" {
   description = "Disk size of the domain"
   default     = 21474836480 # 20G

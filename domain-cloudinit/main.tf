@@ -17,6 +17,7 @@ resource "libvirt_cloudinit_disk" "init" {
 }
 
 resource "libvirt_volume" "os" {
+  count          = var.base_image_id != null ? 1 : 0
   name           = "${var.domain_name}-os"
   pool           = var.pool_name
   size           = var.disk_size_bytes
@@ -43,8 +44,11 @@ resource "libvirt_domain" "domain" {
   }
 
   # TODO: Wait for fix on https://github.com/dmacvicar/terraform-provider-libvirt/issues/728
-  disk {
-    volume_id = libvirt_volume.os.id
+  dynamic "disk" {
+    for_each = libvirt_volume.os
+    content {
+      volume_id = disk.value.id
+    }
   }
 
   dynamic "disk" {
