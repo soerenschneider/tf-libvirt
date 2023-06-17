@@ -3,6 +3,12 @@ variable "provider_uri" {
   type        = string
 }
 
+variable "ssh_public_key_file" {
+  description = "file that contains the ssh public key"
+  type        = string
+  default     = "~/.ssh/id_ed25519.pub"
+}
+
 variable "ssh_public_keys" {
   description = "ssh public key"
   type        = string

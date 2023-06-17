@@ -1,7 +1,7 @@
 data "template_file" "user_data" {
   template = file(var.cloudinit_user_data)
   vars = {
-    ssh_public_keys = var.ssh_public_keys
+    ssh_public_keys = join(",", var.ssh_public_keys)
   }
 }
 

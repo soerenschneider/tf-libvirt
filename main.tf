@@ -20,6 +20,7 @@ resource "libvirt_volume" "base" {
 }
 
 locals {
+  ssh_pubkeys = distinct(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_public_keys)))
   defined_hosts = flatten([for hosts_key, hosts_value in try(yamldecode(file(var.hosts_file)), {}) : [
     for datacenter_key, datacenter_values in hosts_value : [
       for host in datacenter_values : host if lookup(host, "physical", null) != null
@@ -51,7 +52,7 @@ module "domains" {
   disk_size_bytes = each.value.disk_size_b
 
   provider_uri    = var.provider_uri
-  ssh_public_keys = var.ssh_public_keys
+  ssh_public_keys = local.ssh_pubkeys
 
   pool_name    = libvirt_pool.default.name
   network_name = libvirt_network.bridge.name
