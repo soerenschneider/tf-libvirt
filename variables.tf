@@ -9,9 +9,15 @@ variable "ssh_public_key_file" {
   default     = "~/.ssh/id_ed25519.pub"
 }
 
-variable "ssh_public_keys" {
+variable "ssh_fallback_public_keys" {
   description = "ssh public key"
   type        = string
+  default     = ""
+}
+
+variable "vm_host" {
+  type        = string
+  description = "the name of this vm host"
 }
 
 variable "iso_urls" {
@@ -29,14 +35,15 @@ variable "hosts_file" {
   default = ""
 }
 
-variable "domains" {
-  type = map(object({
-    memory        = number
-    vcpus         = number
-    mac           = optional(string)
-    os            = string
-    disk_size_b   = number
-    running       = optional(bool, true)
-    block_devices = optional(list(string), [])
-  }))
-}
+#variable "domains" {
+#  type = map(object({
+#    memory        = number
+#    vcpus         = number
+#    mac           = optional(string)
+#    os            = string
+#    create_volume = bool
+#    disk_size_b   = number
+##   running       = optional(bool, true)
+#    block_devices = optional(list(string), [])
+#  }))
+#}

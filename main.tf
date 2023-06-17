@@ -20,8 +20,12 @@ resource "libvirt_volume" "base" {
 }
 
 locals {
-  ssh_pubkeys = distinct(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_public_keys)))
-  defined_hosts = flatten([for hosts_key, hosts_value in try(yamldecode(file(var.hosts_file)), {}) : [
+  hosts_yaml = file(var.hosts_file)
+  hosts_data = try(yamldecode(local.hosts_yaml), [])
+
+  ssh_pubkeys = distinct(compact(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_fallback_public_keys))))
+
+  defined_hosts = flatten([for hosts_key, hosts_value in local.hosts_data : [
     for datacenter_key, datacenter_values in hosts_value : [
       for host in datacenter_values : host if lookup(host, "physical", null) != null
     ] if datacenter_key == var.datacenter
@@ -33,22 +37,29 @@ locals {
     host.host => host.physical
   }
 
-  domains = { for domain, val in var.domains :
+  domains = {
+    for host in local.hosts_data.local_hosts[var.datacenter] :
+    host.host => host.vm_config
+    if try(host.vm_config.host, "") == var.vm_host && try(host.vm_config.disabled, false) == false
+  }
+
+  mac_domains = { for domain, val in local.domains :
     domain => merge(val, { "mac" = lookup(val, "mac", null) != null ? val["mac"] : lookup(local.hosts_macs, domain, null) })
   }
 }
 
 module "domains" {
-  for_each    = local.domains
+  for_each    = local.mac_domains
   source      = "./domain-cloudinit"
   domain_name = each.key
 
   memory_m        = each.value.memory
   vcpus           = each.value.vcpus
-  running         = each.value.running
-  base_image_id   = libvirt_volume.base[each.value.os].id
+  running         = lookup(each.value, "running", true)
+  base_image_id   = try(each.value.create_volume, false) ? libvirt_volume.base[each.value.os].id : null
   block_devices   = each.value.block_devices
   domain_mac      = each.value.mac
+  create_volume   = try(each.value.create_volume, false)
   disk_size_bytes = each.value.disk_size_b
 
   provider_uri    = var.provider_uri
