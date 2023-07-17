@@ -63,4 +63,8 @@ resource "libvirt_domain" "domain" {
     target_port = "0"
     target_type = "serial"
   }
+  graphics {
+    type        = "vnc"
+    listen_type = "address"
+  }
 }
