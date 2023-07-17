@@ -57,7 +57,7 @@ module "domains" {
   vcpus           = each.value.vcpus
   running         = lookup(each.value, "running", true)
   base_image_id   = try(each.value.create_volume, false) ? libvirt_volume.base[each.value.os].id : null
-  block_devices   = each.value.block_devices
+  block_devices   = try(each.value.block_devices, [])
   domain_mac      = each.value.mac
   create_volume   = try(each.value.create_volume, false)
   disk_size_bytes = each.value.disk_size_b
