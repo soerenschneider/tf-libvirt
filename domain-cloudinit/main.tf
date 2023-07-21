@@ -17,7 +17,7 @@ resource "libvirt_cloudinit_disk" "init" {
 }
 
 resource "libvirt_volume" "os" {
-  count          = var.base_image_id != null ? 1 : 0
+  count          = var.create_volume ? 1 : 0
   name           = "${var.domain_name}-os"
   pool           = var.pool_name
   size           = var.disk_size_bytes
