@@ -3,9 +3,7 @@ provider_uri = "qemu+ssh://soeren@vserver.dd.soeren.cloud/system"
 datacenter = "dd"
 
 iso_urls = {
-  "debian-11" = "https://cdimage.debian.org/cdimage/cloud/bullseye/20220816-1109/debian-11-generic-amd64-20220816-1109.qcow2"
-  "ubuntu-2204" = "https://cloud-images.ubuntu.com/releases/22.04/release-20220810/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img"
-  "ubuntu-2204-full" = "https://cloud-images.ubuntu.com/releases/22.04/release-20220923/ubuntu-22.04-server-cloudimg-amd64.img"
+  "debian-12" = "https://cdimage.debian.org/images/cloud/bookworm/20230723-1450/debian-12-generic-amd64-20230723-1450.qcow2"
 }
 
 vm_host = "vserver"
