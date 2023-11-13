@@ -1,12 +1,12 @@
 data "template_file" "user_data" {
-  template = file(var.cloudinit_user_data)
+  template = file("${path.module}/../${var.cloudinit_user_data}")
   vars = {
     ssh_public_keys = join(",", var.ssh_public_keys)
   }
 }
 
 data "template_file" "network_config" {
-  template = file(var.cloudinit_user_network)
+  template = file("${path.module}/../${var.cloudinit_user_network}")
 }
 
 resource "libvirt_cloudinit_disk" "init" {
