@@ -44,8 +44,12 @@ jobs:
         run: terraform fmt -recursive -check
       - name: validate
         run: |
-          terraform -chdir=envs/prod init -backend=false
-          terraform -chdir=envs/prod validate
+          terraform -chdir=envs/vserver.dd.soeren.cloud init -backend=false
+          terraform -chdir=envs/vserver.dd.soeren.cloud validate
+          terraform -chdir=envs/vserver.ez.soeren.cloud init -backend=false
+          terraform -chdir=envs/vserver.ez.soeren.cloud validate
+          terraform -chdir=envs/vserver.pt.soeren.cloud init -backend=false
+          terraform -chdir=envs/vserver.pt.soeren.cloud validate
 
   tflint:
     name: tflint
