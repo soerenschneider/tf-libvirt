@@ -63,7 +63,6 @@ module "domains" {
   create_volume   = try(each.value.create_volume, false)
   disk_size_bytes = each.value.disk_size_b
 
-  provider_uri    = var.provider_uri
   ssh_public_keys = local.ssh_pubkeys
 
   pool_name    = libvirt_pool.default.name
