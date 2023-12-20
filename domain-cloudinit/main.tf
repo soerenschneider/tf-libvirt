@@ -1,6 +1,6 @@
 locals {
   user_data = {
-    ssh_public_keys: join(",", var.ssh_public_keys)
+    ssh_public_keys : join(",", var.ssh_public_keys)
   }
 }
 

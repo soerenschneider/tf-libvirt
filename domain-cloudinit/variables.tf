@@ -61,13 +61,13 @@ variable "domain_mac" {
 
 variable "cloudinit_user_data" {
   description = "cloudinit user data file"
-  type = string
+  type        = string
   default     = "templates/cloud_init.cfg"
 }
 
 variable "cloudinit_user_network" {
   description = "cloudinit network config file"
-  type = string
+  type        = string
   default     = "templates/network_config.cfg"
 }
 
