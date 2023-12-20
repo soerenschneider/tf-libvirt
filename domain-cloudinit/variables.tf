@@ -62,7 +62,6 @@ variable "domain_mac" {
 variable "cloudinit_user_data" {
   description = "cloudinit user data file"
   type = string
-
   default     = "templates/cloud_init.cfg"
 }
 
