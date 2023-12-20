@@ -1,18 +1,11 @@
-data "template_file" "user_data" {
-  template = file("${path.module}/../${var.cloudinit_user_data}")
-  vars = {
-    ssh_public_keys = join(",", var.ssh_public_keys)
-  }
-}
-
-data "template_file" "network_config" {
-  template = file("${path.module}/../${var.cloudinit_user_network}")
+locals {
+  ssh_public_keys = join(",", var.ssh_public_keys)
 }
 
 resource "libvirt_cloudinit_disk" "init" {
   name           = "${var.domain_name}_commoninit.iso"
-  user_data      = data.template_file.user_data.rendered
-  network_config = data.template_file.network_config.rendered
+  user_data      = templatefile(file("${path.module}/../${var.cloudinit_user_data}"), local.ssh_public_keys)
+  network_config = templatefile("${path.module}/../${var.cloudinit_user_network}", {})
   pool           = var.pool_name
 }
 
