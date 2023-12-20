@@ -8,10 +8,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket               = "soerenschneider-terraform"
-    key                  = "libvirt"
-    workspace_key_prefix = "libvirt"
-    region               = "us-east-1"
+    bucket = "soerenschneider-terraform"
+    key    = "libvirt-prd-vserver.pt.soeren.cloud"
+    region = "us-east-1"
   }
 }
 

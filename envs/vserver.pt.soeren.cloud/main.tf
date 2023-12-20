@@ -20,7 +20,8 @@ resource "libvirt_volume" "base" {
 }
 
 locals {
-  hosts_yaml = file(var.hosts_file)
+  hosts_file = "~/src/gitlab/ansible/inventory/prod/group_vars/all/hosts.yml"
+  hosts_yaml = file(local.hosts_file)
   hosts_data = try(yamldecode(local.hosts_yaml), [])
 
   ssh_pubkeys = distinct(compact(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_fallback_public_keys))))
@@ -50,7 +51,7 @@ locals {
 
 module "domains" {
   for_each    = local.mac_domains
-  source      = "./domain-cloudinit"
+  source      = "../../domain-cloudinit"
   domain_name = each.key
 
   memory_m        = each.value.memory

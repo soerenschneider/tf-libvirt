@@ -29,21 +29,3 @@ variable "datacenter" {
   type    = string
   default = ""
 }
-
-variable "hosts_file" {
-  type    = string
-  default = ""
-}
-
-#variable "domains" {
-#  type = map(object({
-#    memory        = number
-#    vcpus         = number
-#    mac           = optional(string)
-#    os            = string
-#    create_volume = bool
-#    disk_size_b   = number
-##   running       = optional(bool, true)
-#    block_devices = optional(list(string), [])
-#  }))
-#}

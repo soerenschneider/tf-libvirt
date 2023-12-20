@@ -4,10 +4,6 @@ variable "pool_name" {
   default     = "default"
 }
 
-variable "provider_uri" {
-  description = "uri to the provider endpoint"
-}
-
 variable "vcpus" {
   description = "VCPUs to attach to the domain"
   type        = number
@@ -65,11 +61,13 @@ variable "domain_mac" {
 
 variable "cloudinit_user_data" {
   description = "cloudinit user data file"
+  type = string
   default     = "templates/cloud_init.cfg"
 }
 
 variable "cloudinit_user_network" {
   description = "cloudinit network config file"
+  type = string
   default     = "templates/network_config.cfg"
 }
 
