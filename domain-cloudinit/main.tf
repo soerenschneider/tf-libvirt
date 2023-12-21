@@ -30,7 +30,7 @@ resource "libvirt_domain" "domain" {
   autostart  = var.domain_autostart
   running    = var.running
   cloudinit  = libvirt_cloudinit_disk.init.id
-  qemu_agent = true
+  qemu_agent = var.qemu_agent
 
   network_interface {
     network_name = var.network_name

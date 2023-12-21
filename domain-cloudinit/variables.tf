@@ -65,6 +65,11 @@ variable "cloudinit_user_data" {
   default     = "templates/cloud_init.cfg"
 }
 
+variable "qemu_agent" {
+  type    = bool
+  default = false
+}
+
 variable "cloudinit_user_network" {
   description = "cloudinit network config file"
   type        = string
