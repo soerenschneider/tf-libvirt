@@ -1,5 +1,5 @@
 locals {
-  hosts_file = "~/src/gitlab/ansible/inventory/prod/group_vars/all/hosts.yml"
+  hosts_file = "~/src/github/ansible-inventory-prod/group_vars/all/hosts.yml"
   hosts_yaml = file(local.hosts_file)
   hosts_data = try(yamldecode(local.hosts_yaml), [])
 

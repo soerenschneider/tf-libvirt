@@ -6,6 +6,7 @@ provider "registry.opentofu.org/dmacvicar/libvirt" {
   constraints = "0.7.6"
   hashes = [
     "h1:h5AOtaYpdnjPPtjKw2PsNmjZ9VmjnAgqXTndl3Mwwug=",
+    "h1:mmbm4vTyC/DCGO4Ed/vbp5AKvy1gmVn/94fzB9VmR08=",
     "zh:0bde54f6f658b20b620b875daf106b5b25b1bae4d15408d6c5f06d58360e254d",
     "zh:0c97c6930015918b8a34b6d7a2b0c3d17a649c226fcd1874fcba5bbbc0f35972",
     "zh:1bdd7aa0011c5f024a09a124836ee9bc8e71b05a6ece810c61824275fd3f695f",
