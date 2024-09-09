@@ -6,12 +6,6 @@ terraform {
       version = "0.7.6"
     }
   }
-
-  backend "s3" {
-    bucket = "soerenschneider-terraform"
-    key    = "libvirt-prd-vserver-2.ez.soeren.cloud"
-    region = "us-east-1"
-  }
 }
 
 provider "libvirt" {
