@@ -1,0 +1,35 @@
+---
+name: "security scanners"
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request: {}
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  trivy:
+    name: trivy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Trivy vulnerability scanner in fs mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          scanners: 'vuln,misconfig,secret'
+          trivy-config: ".trivy.yaml"
+
+  checkov:
+    name: checkov
+    runs-on: ubuntu-latest
+    container: ghcr.io/soerenschneider/terraform-tools:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: checkov
+        run: checkov -d . --quiet

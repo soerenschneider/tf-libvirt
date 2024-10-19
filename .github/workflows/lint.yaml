@@ -1,0 +1,31 @@
+---
+name: "lint"
+on:
+  push:
+    branches:
+      - "master"
+      - "main"
+  pull_request: {}
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  fmt:
+    name: fmt
+    runs-on: ubuntu-latest
+    container: ghcr.io/opentofu/opentofu:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fmt
+        run: tofu fmt -recursive -check
+
+  tflint:
+    name: tflint
+    runs-on: ubuntu-latest
+    container: ghcr.io/soerenschneider/terraform-tools:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: tflint
+        run: tflint --recursive
