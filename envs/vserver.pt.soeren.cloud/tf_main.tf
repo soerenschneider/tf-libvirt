@@ -1,5 +1,5 @@
 locals {
-  domains = yamldecode(file("domains.yaml"))
+  domains     = yamldecode(file("domains.yaml"))
   ssh_pubkeys = distinct(compact(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_fallback_public_keys))))
 }
 
