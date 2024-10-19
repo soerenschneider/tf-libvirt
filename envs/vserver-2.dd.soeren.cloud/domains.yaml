@@ -1,0 +1,8 @@
+---
+- name: "k8s-dqs"
+  memory: 12228
+  mac: "ee:32:bc:cf:89:32"
+  disk_size_g: 75
+  vcpus: 3
+  os: debian-12
+  create_volume: true

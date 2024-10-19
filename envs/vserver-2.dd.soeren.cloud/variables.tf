@@ -15,17 +15,7 @@ variable "ssh_fallback_public_keys" {
   default     = ""
 }
 
-variable "vm_host" {
-  type        = string
-  description = "the name of this vm host"
-}
-
 variable "iso_urls" {
   description = "url to fetch debian iso from"
   type        = map(string)
-}
-
-variable "datacenter" {
-  type    = string
-  default = ""
 }

@@ -12,3 +12,7 @@ terraform {
 }
 EOF
 }
+
+inputs = {
+  provider_uri = "qemu+ssh://soeren@${path_relative_to_include()}/system"
+}

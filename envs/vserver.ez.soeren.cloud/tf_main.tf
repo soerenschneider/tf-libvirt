@@ -1,3 +1,8 @@
+locals {
+  domains = yamldecode(file("domains.yaml"))
+  ssh_pubkeys = distinct(compact(concat(try([chomp(file(var.ssh_public_key_file))], []), split(",", var.ssh_fallback_public_keys))))
+}
+
 resource "libvirt_pool" "default" {
   name = "default"
   type = "dir"
@@ -20,7 +25,7 @@ resource "libvirt_volume" "base" {
 }
 
 module "domains" {
-  for_each    = local.mac_domains
+  for_each    = { for domain in local.domains : domain.name => domain }
   source      = "../../domain-cloudinit"
   domain_name = each.key
 
@@ -29,9 +34,9 @@ module "domains" {
   running         = lookup(each.value, "running", true)
   base_image_id   = try(each.value.create_volume, false) ? libvirt_volume.base[each.value.os].id : null
   block_devices   = try(each.value.block_devices, [])
-  domain_mac      = each.value.mac
+  domain_mac      = try(each.value.mac, null)
   create_volume   = try(each.value.create_volume, false)
-  disk_size_bytes = each.value.disk_size_b
+  disk_size_bytes = try(each.value.disk_size_g, 5) * 1073741824
 
   ssh_public_keys = local.ssh_pubkeys
 
