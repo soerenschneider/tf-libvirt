@@ -1,7 +1,10 @@
 ---
 repos:
   - repo: https://github.com/soerenschneider/pre-commit-hooks
-    rev: v1.2.1
+    rev: v1.5.2
     hooks:
       - id: tf-fmt
-      - id: tf-validate
+      - id: tf-checkov
+      - id: tflint
+      - id: trivy
+      - id: gitleaks
