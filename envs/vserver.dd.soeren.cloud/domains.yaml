@@ -29,3 +29,13 @@
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo970_0-dbs"
+
+- name: "auth"
+  memory: 2048
+  mac: "ee:32:bc:cf:89:33"
+  disk_size_g: 10
+  vcpus: 2
+  os: debian-12
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt_evo970_0-auth"

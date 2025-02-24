@@ -30,3 +30,13 @@
   block_devices:
     - "/dev/mapper/libvirt_evo_970_0-dbs"
     - "/dev/disk/by-uuid/e2237999-425a-49dc-89e1-cb437abc5a27"
+
+- name: "auth"
+  memory: 4096
+  mac: "70:85:C2:FF:A6:E5"
+  disk_size_g: 10
+  vcpus: 2
+  os: debian-12
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt_evo_970_0-auth"
