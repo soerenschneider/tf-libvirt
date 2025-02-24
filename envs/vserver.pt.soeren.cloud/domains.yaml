@@ -4,7 +4,7 @@
   mac: "ee:32:bc:ff:89:34"
   disk_size_g: 150
   vcpus: 8
-  os: debian-12
+  os: "debian-12"
   create_volume: false
   block_devices:
     - /dev/mapper/libvirt-pool
@@ -14,7 +14,7 @@
   mac: "ee:32:bc:ff:89:16"
   disk_size_g: 75
   vcpus: 2
-  os: debian-12
+  os: "debian-12"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt-dbs"
@@ -24,8 +24,8 @@
   mac: "ee:32:bc:ff:89:12"
   disk_size_g: 25
   vcpus: 2
-  os: debian-12
+  os: "debian-12"
   create_volume: false
   block_devices:
-    - /dev/mapper/libvirt-nas
-    - /dev/disk/by-uuid/7eac2dd2-8857-4081-a0bd-3c883682cdd2
+    - "/dev/mapper/libvirt-nas"
+    - "/dev/disk/by-uuid/7eac2dd2-8857-4081-a0bd-3c883682cdd2"
