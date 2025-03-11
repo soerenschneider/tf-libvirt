@@ -5,4 +5,16 @@
   disk_size_g: 75
   vcpus: 3
   os: debian-12
-  create_volume: true
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt-k8s-dqs"
+
+- name: "auth-2"
+  memory: 4096
+  mac: "ee:32:bc:cf:89:34"
+  disk_size_g: 10
+  vcpus: 2
+  os: debian-12
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt-auth-2"
