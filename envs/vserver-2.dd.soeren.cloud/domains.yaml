@@ -7,7 +7,7 @@
   os: debian-12
   create_volume: false
   block_devices:
-    - "/dev/mapper/libvirt_evo970-k8s-dqs"
+    - "/dev/mapper/libvirt_evo970-k8s_dqs"
 
 - name: "auth-2"
   memory: 4096
@@ -17,4 +17,4 @@
   os: debian-12
   create_volume: false
   block_devices:
-    - "/dev/mapper/libvirt_evo970-auth-2"
+    - "/dev/mapper/libvirt_evo970-auth"
