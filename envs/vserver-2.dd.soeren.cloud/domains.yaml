@@ -1,7 +1,7 @@
 ---
 - name: "k8s-dqs"
   memory: 12228
-  mac: "ee:32:bc:cf:89:32"
+  mac: "ee:32:bc:cf:02:32"
   disk_size_g: 75
   vcpus: 3
   os: debian-12
@@ -11,10 +11,20 @@
 
 - name: "auth-2"
   memory: 4096
-  mac: "ee:32:bc:cf:89:34"
+  mac: "ee:32:bc:cf:02:34"
   disk_size_g: 10
   vcpus: 2
   os: debian-12
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo970-auth"
+
+- name: "dbs-2"
+  memory: 4096
+  mac: "ee:32:bc:cf:02:35"
+  disk_size_g: 30
+  vcpus: 2
+  os: debian-12
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt_evo970-dbs"
