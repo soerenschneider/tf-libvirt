@@ -1,13 +1,13 @@
 ---
-- name: "pool"
-  memory: 24576
+- name: "k8s"
+  memory: 6144
   mac: "ee:32:bc:ff:89:34"
-  disk_size_g: 150
-  vcpus: 8
+  disk_size_g: 100
+  vcpus: 4
   os: "debian-12"
   create_volume: false
   block_devices:
-    - /dev/mapper/libvirt-pool
+    - "/dev/mapper/libvirt-k8s"
 
 - name: "dbs"
   memory: 4096
@@ -20,9 +20,9 @@
     - "/dev/mapper/libvirt-dbs"
 
 - name: "nas"
-  memory: 2048
+  memory: 4096
   mac: "ee:32:bc:ff:89:12"
-  disk_size_g: 25
+  disk_size_g: 50
   vcpus: 2
   os: "debian-12"
   create_volume: false
