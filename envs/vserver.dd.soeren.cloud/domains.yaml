@@ -31,7 +31,7 @@
     - "/dev/mapper/libvirt_evo970_0-dbs"
 
 - name: "auth"
-  memory: 2048
+  memory: 4096
   mac: "ee:32:bc:cf:89:33"
   disk_size_g: 10
   vcpus: 2
