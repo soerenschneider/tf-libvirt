@@ -13,40 +13,40 @@
 - name: "k8s"
   memory: 20480
   mac: "70:85:C2:FF:A6:E3"
-  disk_size_g: 150
+  disk_size_g: 75
   vcpus: 6
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo_980_0-k8s"
+    - "/dev/mapper/libvirt_wdblue_0-k8s_data"
 
 - name: "dbs"
   memory: 4096
   mac: "70:85:C2:FF:A6:E4"
   disk_size_g: 75
   vcpus: 2
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo_970_0-dbs"
-    - "/dev/disk/by-uuid/e2237999-425a-49dc-89e1-cb437abc5a27"
 
 - name: "auth"
   memory: 4096
   mac: "70:85:C2:FF:A6:E5"
   disk_size_g: 10
   vcpus: 2
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo_970_0-auth"
 
 - name: "pim"
-  memory: 2048
+  memory: 1024
   mac: "70:85:C2:FF:A6:E6"
   disk_size_g: 10
   vcpus: 1
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo_970_0-pim"
@@ -56,7 +56,7 @@
   mac: "70:85:C2:FF:A6:E7"
   disk_size_g: 20
   vcpus: 2
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo_970_0-mail"
