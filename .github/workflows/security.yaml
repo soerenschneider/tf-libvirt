@@ -16,7 +16,7 @@ jobs:
     name: trivy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run Trivy vulnerability scanner in fs mode
         uses: aquasecurity/trivy-action@master
         with:
@@ -30,6 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/soerenschneider/terraform-tools:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: checkov
         run: checkov -d . --quiet
