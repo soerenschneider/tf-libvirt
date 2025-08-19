@@ -15,7 +15,7 @@
   mac: "ee:32:bc:cf:89:02"
   disk_size_g: 150
   vcpus: 8
-  os: "debian-12"
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo980_0-k8s"
