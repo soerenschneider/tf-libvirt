@@ -13,7 +13,7 @@
 - name: "k8s"
   memory: 20480
   mac: "ee:32:bc:cf:89:02"
-  disk_size_g: 150
+  disk_size_g: 75
   vcpus: 8
   os: "debian-13"
   create_volume: false
