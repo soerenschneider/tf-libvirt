@@ -37,5 +37,5 @@
   os: "debian-13"
   create_volume: false
   block_devices:
-    - "/dev/mapper/libvirt_evo970_0-nas"
+    - "/dev/mapper/libvirt_evo970-nas"
     - "/dev/disk/by-uuid/3e08e257-7bc1-4904-ab52-df32f2dedd58"
