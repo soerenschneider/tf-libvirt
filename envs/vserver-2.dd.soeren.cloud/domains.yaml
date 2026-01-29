@@ -28,3 +28,14 @@
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo970-dbs"
+
+- name: "nas-2"
+  memory: 3072
+  mac: "ee:32:bc:cf:02:36"
+  disk_size_g: 75
+  vcpus: 2
+  os: "debian-13"
+  create_volume: false
+  block_devices:
+    - "/dev/mapper/libvirt_evo970_0-nas"
+    - "/dev/disk/by-uuid/3e08e257-7bc1-4904-ab52-df32f2dedd58"
