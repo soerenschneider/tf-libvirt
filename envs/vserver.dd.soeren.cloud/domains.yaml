@@ -3,18 +3,18 @@
   memory: 3072
   mac: "ee:32:bc:cf:89:9d"
   disk_size_g: 75
-  vcpus: 2
-  os: "debian-12"
+  vcpus: 4
+  os: "debian-13"
   create_volume: false
   block_devices:
     - "/dev/mapper/libvirt_evo970_0-nas"
-    - "/dev/disk/by-uuid/2a545d87-a795-42d9-be84-3c6a10f09d5d"
+    - "/dev/disk/by-uuid/73957040-6ddd-4a5d-9456-54b2088fe244"
 
 - name: "k8s"
   memory: 20480
   mac: "ee:32:bc:cf:89:02"
   disk_size_g: 75
-  vcpus: 8
+  vcpus: 10
   os: "debian-13"
   create_volume: false
   block_devices:
