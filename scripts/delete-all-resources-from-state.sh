@@ -11,7 +11,7 @@ echo ""
 if [[ ${REPLY} =~ ^[Yy]$ ]]
 then
     echo "Proceeding"
-    terraform state list | cut -f 1 -d '[' | xargs -L 1 terraform state rm
+    tofu state list | cut -f 1 -d '[' | xargs -L 1 tofu state rm
 else
     echo "OK, bye"
 fi
