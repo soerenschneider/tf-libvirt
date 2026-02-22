@@ -1,6 +1,6 @@
 ---
 - name: "nas"
-  memory: 2048
+  memory: 4096
   mac: "70:85:C2:DD:37:25"
   disk_size_g: 30
   vcpus: 2
