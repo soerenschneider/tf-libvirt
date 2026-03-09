@@ -2,24 +2,35 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/dmacvicar/libvirt" {
-  version     = "0.7.1"
-  constraints = "~> 0.7.0"
+  version     = "0.9.4"
+  constraints = "0.9.4"
   hashes = [
-    "h1:1yEJVPVFkRkbRY63+sFRAWau/eJ0xlecHWLCV8spkWU=",
-    "zh:1c59f2ab68da6326637ee8b03433e84af76b3e3562f251a7f2aa239a7b262a8d",
-    "zh:236e24ecf036e99d9d1e2081a39dc9cb4b8993850a37141a1449f20750f883d6",
-    "zh:4519c22b1f00c1d37d60ac6c2cb7ad5ab9dbcd44a80b4f61e68aacb54eae017d",
-    "zh:54de4e3c979c32af1dc71ec2846912f669a28bdb0990e8a3c1fb8fea4ede7b61",
-    "zh:6270a757bcf4e1f9efe47726cf0caefba30a25e59d151103cf03d1656325783c",
-    "zh:68b8586d5b29c0a1cb7c608a309b38db911449c072d60eee9e40e01881f1c23a",
-    "zh:724ba2290fea704714378e9363541420c36091e790c7f39150cde8987d4e0754",
-    "zh:7b6860c92376cdad98273aab4bea62546622e08f50733e4b2e58a7a859d3b49d",
-    "zh:986a0a4f8d9511c64bcac8010337deb43110b4c2f91969b2491fd9edc290b60e",
-    "zh:aff0f6f24d69cd97a44cd6059edaf355769fbb8a7643a6db4d52c9a94f98e194",
-    "zh:c46ca3f8384d06c13a7ed3d4b83c65b4f8dccbf9d5f624843b68d176add5c5c2",
-    "zh:ef310534e7d38153aca4ce31655b52a6e6c4d76f32e49732c96b62e9de1ee843",
-    "zh:f1566b094f4267ef2674889d874962dd41e0cba55251645e16d003c77ca8a19c",
-    "zh:f2e019df7b537069828c5537c481e5b7f41d2404eef6fe5c86702c20900b303d",
+    "h1:3d0Oc1LN3xw+6iBjPh/La782ATn4+levVCTn3vXmZV8=",
+    "h1:6nlNxqbwkCrV2p/swU3aeftSVQbtSuuOSctI3KJ02XU=",
+    "h1:JIhzjLjELtTC620bfCa6bP7ccQos4HpgAJoHbPUkg/4=",
+    "h1:MnDSbqnBBDWfAORQE32cToc1hc6FJgt6GT/4CYp0lXk=",
+    "h1:T51jYdh/WoLBxTIXrLL1uUz8frp/djBzpd6wJV77WvQ=",
+    "h1:TGrumz0lgHVWN5cbIuKkG6Lu+34D3x7v61+itGUIURk=",
+    "h1:XIIEHWNItLKHlpEeryBgRzm4PtTM8rqGStEnGNEfNIE=",
+    "h1:ZksKV0wqclZ2H0qzvbR7l1JOgPnQPCoHLUBu897y4YY=",
+    "h1:hEJgjPrSUMYldH1Baq4J/cXUH8bfOLR569sTrxAVchI=",
+    "h1:kdpGk8+Oe810kPbBv8tJohDYNtWzlzHtTCyWvjls+cg=",
+    "h1:loOd0Np+Uo7+ygTnp69b20QmW1HRxlR/K/GRLF6XP5U=",
+    "h1:qdYcPBhFSL4FXLcfeBfPDL7KSiNbjiNUhaM1MaSSDzo=",
+    "h1:vIn8iKr/XZMos+uS30yPJceV5RaRAxZJOQwSBj6oJhs=",
+    "zh:0769368d40cf52ad2fe5d6bef4b043c5e50f2612591987c2e1115b10e9f8795d",
+    "zh:0ac770be21b06c4c187b4ff49e89429e217b436394f9d6060e9890361750a7f5",
+    "zh:0c4d0898e6564301a23a2a55c98664a027a83c1b0a4f6be42247a909ce8c7899",
+    "zh:1ff08275211b0b5ef875bfed7874a25a7b03d09419cb9822350e7244fc9bbb52",
+    "zh:4189dda2e5e53fabc3f5e9cea69334146bc6760e77c6e376e6951fb1df127fda",
+    "zh:730c337f510391fb0392ff906e50ed3d6edc34b2000e47be8ce595636b68b770",
+    "zh:781dee1ab622a2890cc68810d427c9c47851d3f44875f12e6a9b3e3486cc99ab",
+    "zh:89caca84095635533e7a0fdcd467f36470b3b84d52bf9b9499315fedd09d33b0",
+    "zh:9b91beb6f701201159a963f64b436922c98c82ac48eb4ac33fc77122bb67c891",
+    "zh:9ddd73f0a690d147a6da26a30a20c42d00cd2f1da37dba662c0dd68256fb0c90",
+    "zh:ab3741d3ea8158c7923e13232375a5bb1d57cbbec8608b969864ce015fa3e348",
+    "zh:b6fff8011a06cf0a97950180f7888c36479b1f9c13d56ccc2705bda96deda57f",
+    "zh:c97c9178954cf28ae19dd9372d4b0b6a18da76cc01aa4478ffbc0009fcbc6855",
   ]
 }
 
